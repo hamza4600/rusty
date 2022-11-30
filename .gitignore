@@ -1,0 +1,21 @@
+# ignore all binary files
+*.o
+*.a
+*.so
+*.lo
+*.la
+*.loT
+*.laT
+*.loD
+*.laD
+*.loD
+*.laD
+# add binary if rust
+*.rlib
+*.rmeta
+*.d
+*.gcno
+*.gcda
+*.gcov
+*.gcovr
+# only add .rs files

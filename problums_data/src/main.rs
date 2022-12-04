@@ -6,7 +6,12 @@
 use std::fs::remove_file;
 
 //  import LinkList
+mod array;
+mod bits;
 mod linklist;
+mod loops;
+mod recursion;
+mod problums;
 
 fn remove(name: &str) {
     let path = name;
@@ -17,59 +22,65 @@ fn remove(name: &str) {
     }
 }
 
-fn arr() {
-    // vectro
-    let mut v: Vec<i32> = Vec::new(); // array can gro and shrink
-    v.push(1);
-    v.push(2);
-    v.push(3);
-    v.push(4);
-    println!("v = {:?}", v);
-
-    // 2nd way
-    let vv = vec![10, 20, 30, 40];
-    println!("v = {:?}", vv);
-    //  search in vector
-    let i = vv[2]; // give value at index 2
-    println!("i = {}", i);
-    //  search in vector
-    let i = vv.get(2); // give value at index 2
-    println!("i = {:?}", i);
-
-    // 3rd way
-    // let mut vvv = Vec::with_capacity(10);
-    // vvv.push(100);
-    // vvv.push(200);
-    // vvv.push(300);
-    // vvv.push(400);
-    // println!("v = {:?/}", vvv);
-}
-
-fn recursion() {
-    fn factorial(n: u64) -> u64 {
-        if n == 0 {
-            1
-        } else {
-            n * factorial(n - 1)
-        }
-    }
-    println!("factorial of 5 is {}", factorial(5));
-}
-
 fn main() {
-    arr();
-    remove("main"); // pass name of file to be deleted
+    // remove("main"); // pass name of file to be deleted
 
-    let mut ll = linklist::LinkedList::new();
-    ll.append(10);
-    ll.append(20);
-    ll.append(30);
-    ll.append(40);
+    // let mut ll = linklist::LinkedList::new();
+    // ll.append(10);
+    // ll.append(20);
+    // ll.append(30);
+    // ll.append(40);
     // ll.show_node();
     // delete node
-    ll.delete(10);
-    print!("\n");
-    ll.show_node();
-    // rescusrion
-    recursion();
+    // ll.delete(10);
+    // print!("\n");
+    // ll.show_node();
+
+    // array
+    // array::array();
+    // array::array_vector();
+
+    // recursion
+    let aa = recursion::sum_to_n(500);
+    println!("sum = {}", aa);
+    let bb = recursion::factorial(5);
+    println!("factorial = {}", bb);
+    recursion::print_n(5);
+    // let cc = recursion::fibo(8);
+    // println!("fibo = {}", cc);
+    // let dd = recursion::fibo_memo(8);
+    // println!("fibo_memo = {}", dd);
+
+    // Loops
+    loops::loops_for(10);
+    loops::table(50);
+    // loops::loops_while(10);
+    // loops::loops_loop(10);
+    // loops::loops_array();
+    // loops::loops_vector();
+    // loops::doubel();
+    // loops::loops_range_step();  // it will print 0 to 10 with step 2
+    // loops::loops_range(); // it will print 0 to 10
+    // loops::loops_string();
+
+    // bits
+    // let aa = bits::double(100);
+    // println!("double = {}", aa);
+    // let bb = bits::is_even(10100+100);
+    // println!("is_even = {}", bb);
+    // let cc = bits::swap(10, 20);
+    // println!("swap = {:?}", cc);
+    // let dd = bits::swap2(10, 20);
+    // println!("swap2 = {:?}", dd);
+    // let ee = bits::powerof_two(-10);
+    // println!("powerof_two = {}", ee);
+    // let ff = bits::set_bit(10, 2);
+    // println!("set_bit = {}", ff);
+    // let gg = bits::clear_bit(10, 2);
+    // println!("clear_bit = {}", gg);
+
+    // problums
+    // problums::even_odd(10);
+    problums::prime(100);    
+
 }
